@@ -1,0 +1,325 @@
+.achievements {
+    position: relative;
+}
+
+.achievements::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 217, 61, 0.3), transparent);
+}
+
+.achievements-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+/* Section Subtitle */
+.section-subtitle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.subtitle-icon {
+    font-size: 1.4rem;
+}
+
+/* Coding Profiles Section */
+.coding-profiles-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.coding-profiles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.coding-profile-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.coding-profile-card:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+.coding-profile-card:hover .profile-glow {
+    opacity: 0.25;
+}
+
+.profile-glow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, var(--profile-color) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.profile-icon {
+    font-size: 2rem;
+}
+
+.profile-info h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.profile-info p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: center;
+}
+
+.stat-circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1));
+    border-radius: 50%;
+    border: 2px solid var(--profile-color);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--profile-color);
+    transition: all 0.3s ease;
+}
+
+.coding-profile-card:hover .stat-circle {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 107, 107, 0.2);
+}
+
+.stat-circle span {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+/* Total Problems */
+.total-problems {
+    padding: 24px;
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.05), rgba(78, 205, 196, 0.05));
+}
+
+.total-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.total-label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.total-value {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: var(--gradient-warm);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.total-bar-container {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.total-bar {
+    height: 100%;
+    background: var(--gradient-warm);
+    border-radius: var(--radius-full);
+    position: relative;
+}
+
+.total-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: shimmerBar 2s ease-in-out infinite;
+}
+
+@keyframes shimmerBar {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Achievements Section */
+.achievements-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.achievements-group,
+.responsibilities-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.achievements-list,
+.responsibilities-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Achievement Card */
+.achievement-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateX(10px);
+    border-color: var(--achievement-color, var(--accent-coral));
+}
+
+.achievement-icon {
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.15), transparent);
+    border-radius: var(--radius-md);
+}
+
+.achievement-content h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.achievement-content p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* Responsibility Card */
+.responsibility-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.responsibility-card:hover {
+    transform: translateX(10px);
+    border-color: var(--accent-teal);
+}
+
+.responsibility-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(78, 205, 196, 0.1);
+    border-radius: var(--radius-sm);
+}
+
+.responsibility-content h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.responsibility-org {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+}
+
+.responsibility-date {
+    font-size: 0.8rem;
+    color: var(--accent-teal);
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .achievements-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .coding-profiles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .total-content {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .stat-circle {
+        width: 80px;
+        height: 80px;
+        font-size: 1.5rem;
+    }
+}
