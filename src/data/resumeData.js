@@ -92,7 +92,7 @@ export const projects = [
             "Custom document processing"
         ],
         github: "https://github.com/Prowin7/LLM-Powered-RAG-Chatbot",
-        live: "",
+        live: "https://llm-powered-rag-chatbot-75wktnktuj3elwhbtypwqz.streamlit.app/",
         date: "Dec 2024 – Jan 2025",
         color: "#FF6B6B"
     }
